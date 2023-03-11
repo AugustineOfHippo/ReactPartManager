@@ -7,7 +7,7 @@ const dotenv = require('dotenv')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const passport = require("passport")
-const port = 3001;
+const port = 4000;
 
 dotenv.config();
 
@@ -75,5 +75,5 @@ app.get('/', (req,res) => {
 });
 
    app.listen(port, () => {
-    console.log("Server is running!")
+    console.log("Server is running on port: "+port)
 })
