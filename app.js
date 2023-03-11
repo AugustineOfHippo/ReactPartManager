@@ -36,26 +36,26 @@ mongoose.connect('mongodb+srv://otb:otb@cluster0.mheoi.mongodb.net/PMV4?retryWri
        console.log("Database connected");
    });
 
-   const whitelist = process.env.WHITELISTED_DOMAINS
-        ? 'http://localhost:3000'.split(",")
-        : []
+  //  const whitelist = process.env.WHITELISTED_DOMAINS
+  //       ? 'http://localhost:3000'.split(",")
+  //       : []
 
-        const corsOptions = {
-            origin: function (origin, callback) {
-              if (!origin || whitelist.indexOf(origin) !== -1) {
-                callback(null, true)
-              } else {
-                callback(new Error("Not allowed by CORS"))
-              }
-            },
-            credentials: true,
-          }
+  //       const corsOptions = {
+  //           origin: function (origin, callback) {
+  //             if (!origin || whitelist.indexOf(origin) !== -1) {
+  //               callback(null, true)
+  //             } else {
+  //               callback(new Error("Not allowed by CORS"))
+  //             }
+  //           },
+  //           credentials: true,
+  //         }
 
   // require("./strategies/JwtStrategy")
   // require("./strategies/LocalStrategy")
   // require("./authenticate")
 
-   app.use(cors(corsOptions));
+   app.use(cors());
    app.use(passport.initialize());
   
    app.use(express.urlencoded({extended: true}));
